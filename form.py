@@ -12,7 +12,7 @@ from joblib import load
 
 def rating_prediction():
     # Load your trained model 
-    loaded_model = load('movies_trained_model.joblib')
+    loaded_model = load('movies_trained_model.joblib','rb')
 
     # Creating function for prediction
     def movie_rating_prediction(input_data):
