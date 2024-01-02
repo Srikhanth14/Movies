@@ -15,8 +15,7 @@ selected = option_menu(
                         options=["Welcome","Data Overview","Visualization","Form"],
                         icons=["🏠", "📊", "📈","🎬",],
                         default_index=0,
-
-                        orientation="horizontal"
+menu_icon="film",                        orientation="horizontal"
                       )
 
 if selected == "Welcome":
