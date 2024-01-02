@@ -19,7 +19,7 @@ def data_overview():
     # Sample Data
     st.header("Sample Data:")
     st.write("Here's a glimpse of the movie dataset:")
-    data = pd.read_csv("movies_dataset.csv")  # Update with the actual file name
+    data = pd.read_csv("movies_dataset.csv",encoding='ISO-8859-1')  # Update with the actual file name
     st.dataframe(data.head())
 
     # Display your sample data here
