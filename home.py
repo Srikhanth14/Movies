@@ -10,7 +10,7 @@ from PIL import Image
 
 def welcome():
     
-    st.image(Image.open('Movies.jpg'),use_column_width=True)
+    st.image(Image.open('Movies1.jpg'),use_column_width=True)
     # Introduction
     st.title("Movie Rating Prediction App")
     st.write("Embark on a cinematic adventure as we predict movie ratings using machine learning. This web app leverages data insights to estimate a movie's rating based on various features.")
