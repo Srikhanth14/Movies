@@ -9,7 +9,7 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 import home, Dataset,Visualization,form
 
-st.set_page_config(page_title="Movie Rating Prediction", page_icon="film", layout="wide")
+st.set_page_config(page_title="Movie Rating", page_icon="film", layout="wide")
 selected = option_menu(
                         menu_title="Movie Rating Prediction App",
                         options=["Welcome","Data Overview","Visualization","Form"],
