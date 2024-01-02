@@ -12,7 +12,7 @@ import pickle
 
 def rating_prediction():
     # Load your trained model 
-    loaded_model = pickle.load('movies_trained_model.joblib','rb')
+    loaded_model = pickle.load(open('movies_trained_model.joblib','rb'))
 
     # Creating function for prediction
     def movie_rating_prediction(input_data):
