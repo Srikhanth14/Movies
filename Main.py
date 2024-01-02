@@ -11,10 +11,11 @@ import home,Dataset,Visualization,form
 
 st.set_page_config(page_title="Movie Rating", page_icon="film", layout="wide")
 selected = option_menu(
-                        menu_title="Movie Rating Prediction",
+                        menu_title="Movie Rating",
                         options=["Welcome","Data Overview","Visualization","Form"],
                         icons=["🏠", "📊", "📈","🎬",],
                         default_index=0,
+
                         orientation="horizontal"
                       )
 
