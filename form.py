@@ -24,14 +24,16 @@ def rating_prediction():
         prediction = loaded_model.predict(input_data_reshaped_df)
         st.success(f"The predicted movie rating is: {prediction}")
 
-    st.title('Movie Rating Prediction Form')
-    st.write("Enter the Movie Details: ")
+    def main():
+        st.title('Movie Rating Prediction Form')
+        st.write("Enter the Movie Details: ")
+        
+        # Convert inputs to appropriate numerical types
+        Year = st.text_input("Movie Release Year", type='number')
+        Duration = st.text_input("Movie Duration (in minutes)", type='number')
+        Votes = st.text_input("Number of Votes", type='number')
+        Weighted_Rating = st.text_input("Weighted Rating", type='number')
     
-    # Convert inputs to appropriate numerical types
-    Year = st.text_input("Movie Release Year", type='number')
-    Duration = st.text_input("Movie Duration (in minutes)", type='number')
-    Votes = st.text_input("Number of Votes", type='number')
-    Weighted_Rating = st.text_input("Weighted Rating", type='number')
-
-    if st.button('Predict Movie Rating'):
-        movie_rating_prediction([Year, Duration, Votes, Weighted_Rating])
+        if st.button('Predict Movie Rating'):
+            movie_rating_prediction([Year, Duration, Votes, Weighted_Rating])
+    main()
