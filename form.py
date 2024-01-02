@@ -8,11 +8,11 @@ Created on Tue Jan  2 18:04:44 2024
 import streamlit as st
 import pandas as pd
 import numpy as np
-from joblib import load
+import pickle
 
 def rating_prediction():
     # Load your trained model 
-    loaded_model = load('movies_trained_model.joblib')
+    loaded_model = pickle.load('movies_trained_model.joblib','rb')
 
     # Creating function for prediction
     def movie_rating_prediction(input_data):
