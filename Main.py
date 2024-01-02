@@ -12,7 +12,7 @@ import home, Dataset,Visualization,form
 st.set_page_config(page_title="Movie Rating Prediction", page_icon="film", layout="wide")
 selected = option_menu(
                         menu_title="Movie Rating Prediction App",
-                        options=["Welcome", "Data Overview", "Visualization","Rating Prediction Form",],
+                        options=["Welcome","Data Overview","Visualization","Form"],
                         icons=["🏠", "📊", "📈","🎬",],
                         default_index=0,
                         orientation="horizontal"
@@ -23,6 +23,6 @@ if selected == "Home":
 if selected == "Data Overview":
     Dataset.data_overview()
 if selected == "Rating Prediction Form":
-    Visualization.rating_prediction()
+    form.rating_prediction()
 if selected == "Visualization":
-   form.exploratory_charts()
+   Visualization.exploratory_charts()
