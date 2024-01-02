@@ -11,7 +11,7 @@ import home,Dataset,Visualization,form
 
 st.set_page_config(page_title="Movie Rating", page_icon="film", layout="wide")
 selected = option_menu(
-                        menu_title="Movie Rating Prediction App",
+                        menu_title="Movie Rating Prediction",
                         options=["Welcome","Data Overview","Visualization","Form"],
                         icons=["🏠", "📊", "📈","🎬",],
                         default_index=0,
