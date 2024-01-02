@@ -7,7 +7,7 @@ Created on Tue Jan  2 17:28:59 2024
 
 import streamlit as st
 from streamlit_option_menu import option_menu
-import home, Dataset,Visualization,form
+import home,Dataset,Visualization,form
 
 st.set_page_config(page_title="Movie Rating", page_icon="film", layout="wide")
 selected = option_menu(
@@ -18,7 +18,7 @@ selected = option_menu(
                         orientation="horizontal"
                       )
 
-if selected == "Home":
+if selected == "Welcome":
     home.welcome()
 if selected == "Data Overview":
     Dataset.data_overview()
