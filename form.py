@@ -16,7 +16,7 @@ def rating_prediction():
 
     # Creating function for prediction
     def movie_rating_prediction(input_data):
-        input_data_np_array = np.asarray(input_data, dtype=float)
+        input_data_np_array = np.asarray(input_data)
         input_data_reshaped = input_data_np_array.reshape(1, -1)
         column_names = ['Year', 'Duration', 'Votes', 'Weighted_Rating']
 
