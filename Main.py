@@ -22,7 +22,7 @@ if selected == "Welcome":
     home.welcome()
 if selected == "Data Overview":
     Dataset.data_overview()
-if selected == "Rating Prediction Form":
+if selected == "Form":
     form.rating_prediction()
 if selected == "Visualization":
    Visualization.exploratory_charts()
