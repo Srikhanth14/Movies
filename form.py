@@ -36,10 +36,10 @@ def rating_prediction():
         st.write("Enter the Movie Details: ")
         
         # Convert inputs to appropriate numerical types
-        Year = st.number_input("Movie Release Year", min_value=1900, max_value=2100, step=1, format='%d')
-        Duration = st.number_input("Movie Duration (in minutes)", min_value=1, step=1, format='%d')
-        Votes = st.number_input("Number of Votes", min_value=1, step=1, format='%d')
-        Weighted_Rating = st.number_input("Weighted Rating", min_value=0.0, step=0.1, format='%f')
+        Year = st.number_input("Movie Release Year", min_value=1931, max_value=2021, step=1, format='%d')
+        Duration = st.number_input("Movie Duration (in minutes)", min_value=21, step=1, format='%d')
+        Votes = st.number_input("Number of Votes", min_value=5, step=1, format='%d')
+        Weighted_Rating = st.number_input("Weighted Rating", min_value=9.0, step=0.1, format='%f')
     
         if st.button('Predict Movie Rating'):
             movie_rating_prediction(int(Year), int(Duration), int(Votes), float(Weighted_Rating))
