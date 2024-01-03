@@ -42,6 +42,7 @@ def rating_prediction():
         Weighted_Rating = st.number_input("Weighted Rating", min_value=0.0, step=0.1, format='%f')
     
        if st.button('Predict Movie Rating'):
-            movie_rating_prediction(int(Year), int(Duration), int(Votes), float(Weighted_Rating))
+           movie_rating_prediction(int(Year), int(Duration), int(Votes), float(Weighted_Rating))
     main()
+    
 
