@@ -16,24 +16,28 @@ def rating_prediction():
 
     # Creating function for prediction
     def movie_rating_prediction(input_data):
-        input_data_np_array = np.asarray(input_data, dtype=float)
-        input_data_reshaped = input_data_np_array.reshape(1, -1)
-        column_names = ['Year', 'Duration', 'Votes', 'Weighted_Rating']
+        try:
+            input_data_np_array = np.asarray(input_data, dtype=float)
+            input_data_reshaped = input_data_np_array.reshape(1, -1)
+            column_names = ['Year', 'Duration', 'Votes', 'Weighted_Rating']
 
-        input_data_reshaped_df = pd.DataFrame(input_data_reshaped, columns=column_names)
-        prediction = loaded_model.predict(input_data_reshaped_df)
-        st.success(f"The predicted movie rating is: {prediction}")
-        
+            input_data_reshaped_df = pd.DataFrame(input_data_reshaped, columns=column_names)
+            prediction = loaded_model.predict(input_data_reshaped_df)
+            st.success(f"The predicted movie rating is: {prediction[0]:.2f}")
+        except Exception as e:
+            st.error(f"Error in prediction: {e}")
+
     def main():
         st.title('Movie Rating Prediction Form')
         st.write("Enter the Movie Details: ")
         
         # Convert inputs to appropriate numerical types
-        Year = st.text_input("Movie Release Year", type='number')
-        Duration = st.text_input("Movie Duration (in minutes)", type='number')
-        Votes = st.text_input("Number of Votes", type='number')
-        Weighted_Rating = st.text_input("Weighted Rating", type='number')
+        Year = st.number_input("Movie Release Year", min_value=1900, max_value=2100, step=1, format='%d')
+        Duration = st.number_input("Movie Duration (in minutes)", min_value=1, step=1, format='%d')
+        Votes = st.number_input("Number of Votes", min_value=1, step=1, format='%d')
+        Weighted_Rating = st.number_input("Weighted Rating", min_value=0.0, step=0.1, format='%f')
     
-        if st.button('Predict Movie Rating'):
+        if st.button('Predict Movie Rating') and all([Year, Duration, Votes, Weighted_Rating]):
             movie_rating_prediction([Year, Duration, Votes, Weighted_Rating])
     main()
+
