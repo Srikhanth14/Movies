@@ -14,18 +14,22 @@ def rating_prediction():
     # Load your trained model 
     loaded_model = load('movies_trained_model.joblib')
 
-    # Creating function for prediction
-    def movie_rating_prediction(input_data):
-        try:
-            input_data_np_array = np.asarray(input_data, dtype=float)
-            input_data_reshaped = input_data_np_array.reshape(1, -1)
-            column_names = ['Year', 'Duration', 'Votes', 'Weighted_Rating']
+    def movie_rating_prediction(Year, Duration, Votes, Weighted_Rating):
+        
+        # Create a dictionary from inputs
+        user_input = {
+            'Year': [Year], 
+            'Duration': [Duration], 
+            'Votes': [Votes], 
+            'Weighted_Rating': [Weighted_Rating]
+        }
 
-            input_data_reshaped_df = pd.DataFrame(input_data_reshaped, columns=column_names)
-            prediction = loaded_model.predict(input_data_reshaped_df)
-            st.success(f"The predicted movie rating is: {prediction[0]:.2f}")
-        except Exception as e:
-            st.error(f"Error in prediction: {e}")
+        # Convert dictionary to DataFrame
+        input_df = pd.DataFrame(user_input)
+        
+        # Make prediction
+        prediction = loaded_model.predict(input_df)
+        st.success(f"The predicted movie rating is: {prediction[0]:.2f}")
 
     def main():
         st.title('Movie Rating Prediction Form')
@@ -37,7 +41,7 @@ def rating_prediction():
         Votes = st.number_input("Number of Votes", min_value=1, step=1, format='%d')
         Weighted_Rating = st.number_input("Weighted Rating", min_value=0.0, step=0.1, format='%f')
     
-        if st.button('Predict Movie Rating') and all([Year, Duration, Votes, Weighted_Rating]):
-            movie_rating_prediction([Year, Duration, Votes, Weighted_Rating])
+       if st.button('Predict Movie Rating'):
+            movie_rating_prediction(int(Year), int(Duration), int(Votes), float(Weighted_Rating))
     main()
 
