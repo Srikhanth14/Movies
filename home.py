@@ -31,7 +31,7 @@ def welcome():
     st.write("The Movie Rating Prediction project blends the magic of movies with data science techniques. Join us in exploring the features that contribute to predicting a movie's rating.")
 
     # About You
-    st.subheader("About You:")
+    st.subheader("About Me:")
     st.write("Curious about the mind behind the predictions? I'm SRIKHANTH R, a passionate data analyst dedicated to unraveling insights from data.")
     st.write("Feel free to connect with me on [LinkedIn](inkedin.com/in/srikhanth-r) or explore more projects on my [portfolio](datascienceportfol.io/srikhanth_r). Let's dive deep into the world of movie ratings together!")
 
